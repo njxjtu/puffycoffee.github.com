@@ -3,7 +3,9 @@
  * 2012
  */
 (function() {
-	var hero_info = $("#hero_info");
-
-	//hero_info.modal("show");
+	var hero_info = $("#hero_info"),
+		paper = Raphael("game-paper", 300, 180);
+	paper.rect(5, 5, 40, 24, 5).attr({
+		fill: '#33ccff'
+	});
 } ());
