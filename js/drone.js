@@ -8,5 +8,5 @@
 	paper.rect(5, 5, 40, 24, 5).attr({
 		fill: '#33ccff'
 	});
-	var hero_paper = Raphael("hero_div", 940, 300);
+	
 } ());
