@@ -151,9 +151,23 @@ led.setTo(99);
 				<hr/>
 				<section id="3dpiechart">
 					<h3><a>3D pie chart</a></h3>
-					<p>Dial gauge is a .....</p>
-					<p>Design like....</p>
-					<p>image like...</p>
+					<p>
+					An easy to use pie chart plugin.
+					</p>
+					<pre class="prettyprint linenums pre-scrollable">
+Raphael('canvas', 700, 500).pie({
+    values: [87, 134, 83, 23, 98],
+    colors: ["#00ff00", "#ff0011", "#faf600", "#0079fa", "#fa8500"],
+    tooltip: ["January - 87", "Feburary - 136", "March - 77", "April - 120","May - 34"],
+    doughnut: true,
+    radius: 200,
+    chartTitle: "Monthly Payment"
+});
+					</pre>
+					<p>
+						<div id="pie" style="width: 600px; height: 400px;"></div>
+						<div id="doughnut" style="width: 600px; height: 400px;"></div>
+					</p>
 				</section>
 				<section id="7segmentdisplay">
 					<h3><a>7-segment display</a></h3>
@@ -195,6 +209,7 @@ led.setTo(99);
 <script type="text/javascript" src="js/raphael.min.js"></script>
 <script type="text/javascript" src="js/dialgauge.js"></script>
 <script type="text/javascript" src="js/ledgauge.js"></script>
+<script type="text/javascript" src="js/pie.js"></script>
 <script type="text/javascript" src="js/pro.js"></script>
 </body>
 </html>

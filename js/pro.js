@@ -79,6 +79,22 @@ $(document).ready(function () {
 			}, 5000);
 		}
 	});
+	Raphael('pie', 600, 400).pie({
+	    values: [87, 134, 83, 23, 98],
+	    colors: ["#00ff00", "#ff0011", "#faf600", "#0079fa", "#fa8500"],
+	    tooltip: ["January - 87", "Feburary - 136", "March - 77", "April - 120","May - 34"],
+	    doughnut: false,
+	    radius: 100,
+	    chartTitle: "Monthly Payment"
+	});
+	Raphael('doughnut', 600, 400).pie({
+	    values: [87, 134, 83, 23, 98],
+	    colors: ["#00ff00", "#ff0011", "#faf600", "#0079fa", "#fa8500"],
+	    tooltip: ["January - 87", "Feburary - 136", "March - 77", "April - 120","May - 34"],
+	    doughnut: true,
+	    radius: 100,
+	    chartTitle: "Monthly Payment"
+	});
 });
 
 
