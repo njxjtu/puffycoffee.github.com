@@ -17,14 +17,15 @@
         <span class="brand">Peng Zhang</span>
         <div class="nav-collapse collapse">
           <ul class="nav">
-            <li class="active"><a href="index.html"><i class="icon-home icon-white"></i>Home</a></li>
-            <li class="dropdown">
+            <li><a href="index.html"><i class="icon-home icon-black"></i>Home</a></li>
+            <li class="active" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects
                 <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <li><a href="#">Dial gauge</a></li>
+                <li><a href="#">LED gauge</a></li>
+                <li><a href="#">3D pie chart</a></li>
+                <li><a href="#">7-segment display</a></li>
                 <li class="divider"></li>
                 <li class="nav-header">Nav header</li>
                 <li><a href="#">Separated link</a></li>
@@ -37,67 +38,119 @@
       </div>
     </div>
 </div>
+
 <div class="container" style="margin: 80px auto auto auto;">
-	<a href="https://github.com/you"><img style="z-index: 10000; position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px;" src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-dusk-blue@2x.png" alt="Fork me on GitHub"></a>
+	<a id="ribbon" href="https://github.com/puffycoffee"><img style="z-index: 10000; position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px;" src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-dusk-blue@2x.png" alt="Fork me on GitHub"></a>
 	<div class="row">
-		<div class="span3">
-			<ul class="nav nav-tabs nav-stacked">  
-				<li class="active"><a href="#dialgauge">Dial gauge</a></li>  
+		<div id="nav-list" class="span3">
+			<ul class="nav nav-pills nav-tabs nav-stacked">  
+				<li><a href="#dialgauge">Dial gauge</a></li>  
 				<li><a href="#ledgauge">LED gauge</a></li>   
-				<li><a href="#">Gallery</a></li>   
-				<li><a href="#">Contact</a></li> 
+				<li><a href="#3dpiechart">3D pie chart</a></li>   
+				<li><a href="#7segmentdisplay">7-segment display</a></li> 
 			</ul>
-		</div>			
-		<div class="span9">
-			<div style="height: 1000px;">
-			<div class="row">
-				<div class="span9">
-				<h3><a name="dialgauge">Dial gauge</a></h3>
-				<p>Dial gauge is a .....</p>
-				<p>Design like....</p>
-				<p>image like...</p>
-				</div>
-			</div>
-			<div name="ledgauge" class="row">
-				<div class="span9">
-				<h3><a name="ledlgauge">LED gauge</a></h3>
-				<p>Dial gauge is a .....</p>
-				<p>Design like....</p>
-				<p>image like...</p>
-				</div>
-			</div>
+		</div>
+		<div class="span1"></div>
+		<div class="span8">
+			<div style="height: 1400px;">
+				<section id="dialgauge">
+					<h3><a>Dial gauge</a></h3>
+					<p>
+						Dial gauge is a lovely widget powered by <a href="http://raphaeljs.com/">Raphael</a>, it can be used as a value indicator on web page. Thanks to <a href="http://www.w3.org/Graphics/SVG/">SVG</a> and <a href="http://raphaeljs.com/">Raphael</a>, Dial gauge looks gorgeous on high resolution devices such as MacBook Pro with Retina display and iphone4+. Deploying dial gauge only takes few lines of code.
+					</p>
+					<p>
+						<pre class="prettyprint linenums pre-scrollable">
+var dial = Raphael('gauge', 370, 370).dialGauge({
+    div: document.getElementById('gauge'),
+    unit: 'ms',
+    min: 0,
+    max: 500,
+    skin: 'CRISP_WHITE',
+    thresholds: {
+        values: [250, 400, 500],
+        colors: ['#2ffff2f', '#ffff63', '#ff3939']
+    },
+    alert: 400
+});
+dial.instance.pointAt(300);
+dial.instance.changeSkin("CLEAN_BLACK");
+						</pre>
+					</p>
+					<p>
+						<div id="dial1" style="width: 280px; height: 280px;"></div>
+						<div id="dial_alert_box" class="alert" style="display: none;">
+						  <span id="dial_alert">Invalid input for dial gauge!</span>
+						</div>
+						<div class="well">
+						<div class="form-inline">
+						<span class="input-prepend">
+						  <span class="add-on">0-100</span>
+						  <input id="dial_set_value" type="text" class="input-mini" style="text-align: right;" placeholder="Set value">
+						</span>
+						  <select id="dial_set_theme" class="input-small" placeholder="Set theme">
+						    <option value="empty">Theme</option>
+						    <option value="COLSOLE_RED">COLSOLE_RED</option>
+						    <option value="CRISP_WHITE">CRISP_WHITE</option>
+						    <option value="CLEAN_BLACK">CLEAN_BLACK</option>
+						    <option value="CLEAN_BLACK_NO_TRICKS">CLEAN_BLACK_NO_TRICKS</option>
+						    <option value="DISK_TO_BBR">DISK_TO_BBR</option>
+						  </select>
+						  <button id="dial_set_confirm" class="btn btn-primary">Confirm</button>
+						</div>
+						</div>
+					</p>
+				</section>				
+				<section id="ledgauge">
+					<h3><a>LED gauge</a></h3>
+					<p>Dial gauge is a .....</p>
+					<p>Design like....</p>
+					<p>image like...</p>
+				</section>
+				<section id="3dpiechart">
+					<h3><a>3D pie chart</a></h3>
+					<p>Dial gauge is a .....</p>
+					<p>Design like....</p>
+					<p>image like...</p>
+				</section>
+				<section id="7segmentdisplay">
+					<h3><a>7-segment display</a></h3>
+					<p>Dial gauge is a .....</p>
+					<p>Design like....</p>
+					<p>image like...</p>
+				</section>
 			</div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="span5">
-			<hr>
-		    <footer>
-		      <p>
-		        <address>
-		          <strong>PENG ZHANG</strong><br>
-		          El Dorado Hills, CA<br>
-		          <abbr title="Phone">P:</abbr> (916) 757-3850
-		        </address>
-		 
-		        <address>
-		          <strong>Peng Zhang</strong><br>
-		          <a href="mailto:#">nj.pengzhang@gmail.com</a>
-		        </address>
-
-		        <address>
-		          <a href="https://twitter.com/risusmentum" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @risusmentum</a>
-		          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-		        </address>
-		      </p>
-		      <br><br><br>
-		    </footer>
+			
 		</div>
 	</div>
+	<hr>
+	    <footer>
+	      <p>
+	        <address>
+	          <strong>PENG ZHANG</strong><br>
+	          El Dorado Hills, CA<br>
+	          <abbr title="Phone">P:</abbr> (916) 757-3850
+	        </address>
+	        <address>
+	          <strong>Peng Zhang</strong><br>
+	          <a href="mailto:#">nj.pengzhang@gmail.com</a>
+	        </address>
+
+	        <address>
+	          <a href="https://twitter.com/risusmentum" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @risusmentum</a>
+	          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	        </address>
+	      </p>
+	      <br><br><br>
+	    </footer>
 </div>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/raphael.min.js"></script>
-<script src="js/drone.js"></script>
+<script type="text/javascript" src="js/dialgauge.js"></script>
+<script type="text/javascript" src="js/pro.js"></script>
 </body>
 </html>
