@@ -52,7 +52,7 @@
 		</div>
 		<div class="span1"></div>
 		<div class="span8">
-			<div style="height: 1400px;">
+			<div>
 				<section id="dialgauge">
 					<h3><a>Dial gauge</a></h3>
 					<p>
@@ -99,13 +99,56 @@ dial.instance.changeSkin("CLEAN_BLACK");
 						</div>
 						</div>
 					</p>
-				</section>				
+				</section>	
+				<br><br><br>	
+				<hr/>		
 				<section id="ledgauge">
 					<h3><a>LED gauge</a></h3>
-					<p>Dial gauge is a .....</p>
-					<p>Design like....</p>
-					<p>image like...</p>
+					<p>
+						LED gauge is a <a href="http://raphaeljs.com/">Raphael</a> plugin. It can be used as a subsitute for <a href="#dialgauge">Dial gauge</a>.
+					</p>
+					<p>
+						<pre class="prettyprint linenums pre-scrollable">
+var led = Raphael('gauge', 100, 300).ledGauge({
+    div: document.getElementById('gauge'),
+    min: 0,
+    max: 100,
+    title: 'CPU Usage',
+    unit: '%',
+    direction: 0,
+    margin: {
+        left: '30px',
+        right: '30px',
+        top: '40px',
+        bottom: '40px'
+    },
+    thresholds: {
+        values: [50, 80, 100],
+        colors: ['#00ff00', '#f0f000', '#ff0000']
+    }
+});
+led.setTo(99);
+						</pre>
+					</p>
+					<p>
+						<div id="led1" style="width: 450px; height: 150px; background-color: #f1f1f1"></div>
+						<div id="led2" style="width: 160px; height: 200px;"></div>
+						<div id="led_alert_box" class="alert" style="display: none;">
+						  <span id="dial_alert">Invalid input for LED gauges!</span>
+						</div>
+						<div class="well">
+						<div class="form-inline">
+						<span class="input-prepend">
+						  <span class="add-on">0-100</span>
+						  <input id="led_set_value" type="text" class="input-mini" style="text-align: right;" placeholder="Set value">
+						</span>
+						  <button id="led_set_confirm" class="btn btn-primary">Confirm</button>
+						</div>
+						</div>
+					</p>
 				</section>
+				<br><br><br>	
+				<hr/>
 				<section id="3dpiechart">
 					<h3><a>3D pie chart</a></h3>
 					<p>Dial gauge is a .....</p>
@@ -151,6 +194,7 @@ dial.instance.changeSkin("CLEAN_BLACK");
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/raphael.min.js"></script>
 <script type="text/javascript" src="js/dialgauge.js"></script>
+<script type="text/javascript" src="js/ledgauge.js"></script>
 <script type="text/javascript" src="js/pro.js"></script>
 </body>
 </html>
