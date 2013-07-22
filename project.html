@@ -169,11 +169,199 @@ Raphael('canvas', 700, 500).pie({
 						<div id="doughnut" style="width: 600px; height: 400px;"></div>
 					</p>
 				</section>
+				<br>	
+				<hr/>
 				<section id="7segmentdisplay">
 					<h3><a>7-segment display</a></h3>
-					<p>Dial gauge is a .....</p>
-					<p>Design like....</p>
-					<p>image like...</p>
+					<p>
+						Seven-segment display is a simulation of classic electronic display device, the concept of seven-segment display(SSD) is very easy to understand, each segment is assigned a unique number A-G, when that segment is lighted up using "1" to represent. e.g., "1111110" means 0 is displaying.
+						<table class="table table-hover">
+							<caption>Seven-segment display</caption>
+							<thead>
+								<tr>
+								<th>Digit</th>
+								<th>A</th>
+								<th>B</th>
+								<th>C</th>
+								<th>D</th>
+								<th>E</th>
+								<th>F</th>
+								<th>G</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+								<td>0</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>0</td>
+								</tr>
+								<tr>
+								<td>1</td>
+								<td>0</td>
+								<td>1</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td>
+								</tr>
+								<tr>
+								<td>2</td>
+								<td>1</td>
+								<td>1</td>
+								<td>0</td>
+								<td>1</td>
+								<td>1</td>
+								<td>0</td>
+								<td>1</td>
+								</tr>
+								<tr>
+								<td>3</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>1</td>
+								</tr>
+								<tr>
+								<td>4</td>
+								<td>0</td>
+								<td>1</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>1</td>
+								<td>1</td>
+								</tr>
+								<tr>
+								<td>5</td>
+								<td>1</td>
+								<td>0</td>
+								<td>1</td>
+								<td>1</td>
+								<td>0</td>
+								<td>1</td>
+								<td>1</td>
+								</tr>
+								<tr>
+								<td>6</td>
+								<td>1</td>
+								<td>0</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								</tr>
+								<tr>
+								<td>7</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td>
+								</tr>
+								<tr>
+								<td>8</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								</tr>
+								<tr>
+								<td>9</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>0</td>
+								<td>1</td>
+								<td>1</td>
+								</tr>
+							</tbody>
+						</table>
+					</p>
+					<p>
+						A few lines of code can get this seven-segment display work.
+						<pre class="prettyprint linenums pre-scrollable">
+var ssd = new SevenSegDisplay("display", {
+    frame: true,
+    frame_color: "#fff",
+    segment_shadow: true,
+    theme: "blue"
+});
+ssd.update("20:52");
+						</pre>
+					</p>
+					<p>
+						<div id="7seg" style="width: 150px; height: 50px;"></div>
+						<div class="well">
+						<div class="form-inline">
+						  <select id="seg_d1" class="span1">
+						    <option value="0">0</option>
+						    <option value="1">1</option>
+						    <option value="2" selected>2</option>
+						    <option value="3">3</option>
+						    <option value="4">4</option>
+						    <option value="5">5</option>
+						    <option value="6">6</option>
+						    <option value="7">7</option>
+						    <option value="8">8</option>
+						    <option value="9">9</option>
+						  </select>
+						  <select id="seg_d2" class="span1">
+						    <option value="0" selected>0</option>
+						    <option value="1">1</option>
+						    <option value="2">2</option>
+						    <option value="3">3</option>
+						    <option value="4">4</option>
+						    <option value="5">5</option>
+						    <option value="6">6</option>
+						    <option value="7">7</option>
+						    <option value="8">8</option>
+						    <option value="9">9</option>
+						  </select>
+						  <label>:</label>
+						  <select id="seg_d3" class="span1">
+						    <option value="0">0</option>
+						    <option value="1">1</option>
+						    <option value="2">2</option>
+						    <option value="3">3</option>
+						    <option value="4">4</option>
+						    <option value="5" selected>5</option>
+						    <option value="6">6</option>
+						    <option value="7">7</option>
+						    <option value="8">8</option>
+						    <option value="9">9</option>
+						  </select>
+						  <select id="seg_d4" class="span1">
+						    <option value="0">0</option>
+						    <option value="1">1</option>
+						    <option value="2" selected>2</option>
+						    <option value="3">3</option>
+						    <option value="4">4</option>
+						    <option value="5">5</option>
+						    <option value="6">6</option>
+						    <option value="7">7</option>
+						    <option value="8">8</option>
+						    <option value="9">9</option>
+						  </select>
+						  <button id="seg_set" class="btn btn-primary">Confirm</button>
+						</div>
+						</div>
+					</p>
 				</section>
 			</div>
 		</div>
@@ -210,6 +398,7 @@ Raphael('canvas', 700, 500).pie({
 <script type="text/javascript" src="js/dialgauge.js"></script>
 <script type="text/javascript" src="js/ledgauge.js"></script>
 <script type="text/javascript" src="js/pie.js"></script>
+<script type="text/javascript" src="js/7seg.js"></script>
 <script type="text/javascript" src="js/pro.js"></script>
 </body>
 </html>

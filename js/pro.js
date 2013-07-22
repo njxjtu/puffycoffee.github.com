@@ -95,6 +95,20 @@ $(document).ready(function () {
 	    radius: 100,
 	    chartTitle: "Monthly Payment"
 	});
+	var ssd = new SevenSegDisplay("7seg", {
+	    frame: true,
+	    frame_color: "#fff",
+	    segment_shadow: true,
+	    theme: "blue"
+	});
+	ssd.update("2052");
+	$("#seg_set").click(function() {
+		var d1 = $("#seg_d1").val(),
+			d2 = $("#seg_d2").val(),
+			d3 = $("#seg_d3").val(),
+			d4 = $("#seg_d4").val();
+		ssd.update(d1+d2+d3+d4);
+	});
 });
 
 
