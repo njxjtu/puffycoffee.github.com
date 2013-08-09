@@ -3,10 +3,14 @@
  * 2012
  */
 (function() {
-	var hero_info = $("#hero_info"),
-		paper = Raphael("game-paper", 300, 130);
-	paper.rect(5, 5, 40, 24, 5).attr({
-		fill: '#33ccff'
+	var translator = $("#translate");
+	translator.click(function() {
+		$("#aboutme").flip({
+			direction:'rl',
+			color: '#f5f5f5',
+			content: '<div>Hello, My name is Peng Zhang, I am a Java front-end developer working in El Dorado Hills, California. I spend 60% of my time design custom JSF component. When I am not working I can be found writing open source projects or playing video games.'
+		});
+		this.html("abc");
 	});
 	
 } ());
