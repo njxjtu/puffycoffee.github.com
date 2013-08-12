@@ -4,6 +4,34 @@
 <title>Project</title>
 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link rel="shortcut icon" href="favicon.ico">
+<style type="text/css">
+    .back-to-top {
+        background: #1B87E0;
+        bottom: 2%;
+        right: 2%;
+        padding: 0;
+        width: 35px;
+        text-align: center;
+        height: 35px;
+        opacity: 0.4;
+        color: #fff;
+        border: 0;
+        position: fixed;
+        -o-transition:0.3s;
+        -ms-transition:0.3s;
+        -moz-transition:0.3s;
+        -webkit-transition:0.3s;
+        transition:0.3s;
+    }
+    .back-to-top:hover {
+        opacity: 0.8;
+        -o-transition:0.3s;
+        -ms-transition:0.3s;
+        -moz-transition:0.3s;
+        -webkit-transition:0.3s;
+        transition:0.3s;
+    }
+</style>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -31,70 +59,24 @@
 </div>
 
 <div class="container" style="margin: 80px auto auto auto;">
+
 <!-- Blog content goes here -->
-
 <div class="row">
-    <div class="span12" style="">
+    
+    <div class="span7" style="height: 800px;">
     <h3>Website design partially finished</h3>
+    <h9>8/12/2013 El Dorado Hills</h9>
+    <br><br>
     <p>
-    For nearly two weeks, I have been spent some of my spare time working on my website design.
+    For nearly two weeks, I have been spent some of my spare time working on my website. Github and Sublime Text are my best friends. Here is the official celebration for the first day of my website. More content will be added.
     </p>
     </div>
 </div>
+<!---------------------------->
 <div class="row">
-<!-- START: Livefyre Embed -->
-    <div class="span5" id="livefyre-comments"></div>
-    <script type="text/javascript" src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
-    <script type="text/javascript">
-    (function () {
-        var articleId = fyre.conv.load.makeArticleId(null);
-        fyre.conv.load({}, [{
-            el: 'livefyre-comments',
-            network: "livefyre.com",
-            siteId: "339310",
-            articleId: articleId,
-            signed: false,
-            collectionMeta: {
-                articleId: articleId,
-                url: fyre.conv.load.makeCollectionUrl(),
-            }
-        }], function() {});
-    }());
-    </script>
-    <!-- END: Livefyre Embed -->
-</div>
 
-<div class="row">
-    <div class="span12" style="">
-    <h3>Website design partially finished2</h3>
-    <p>
-    asdfaserfafeqwefijwqerflqwjhfjhwqe.
-    </p>
-    </div>
 </div>
-<div class="row">
-<!-- START: Livefyre Embed -->
-    <div class="span5" id="livefyre-comments"></div>
-    <script type="text/javascript" src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
-    <script type="text/javascript">
-    (function () {
-        var articleId = fyre.conv.load.makeArticleId(null);
-        fyre.conv.load({}, [{
-            el: 'livefyre-comments',
-            network: "livefyre.com",
-            siteId: "339310",
-            articleId: articleId,
-            signed: false,
-            collectionMeta: {
-                articleId: articleId,
-                url: fyre.conv.load.makeCollectionUrl(),
-            }
-        }], function() {});
-    }());
-    </script>
-    <!-- END: Livefyre Embed -->
-</div>
-
+<button class="back-to-top">^</button>
 <hr>
 <footer>
   <p>
@@ -118,5 +100,21 @@
 </div>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(window).scroll(function() {
+    // Location of button appearing/disappearing
+    // Define in '' the class or ID of the button
+    if ($(this).scrollTop() >  500) { // After how many px should the button fadein (Currently 1000 milliseconds)
+        $('.back-to-top').fadeIn(500); // Fadein speed
+    } else {
+        $('.back-to-top').fadeOut(500); // Fadeout speed
+    }
+});
+// Back to top animation
+$('.back-to-top').click(function(event) {
+    event.preventDefault();
+    $('html, body').animate({scrollTop:0}, 500); // Scroll speed to the top
+});
+</script>
 </body>
 </html>
