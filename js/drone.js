@@ -19,7 +19,7 @@
 		},
 		function() {
 			$("#aboutme").revertFlip();
-			translator.html("Could you speak English??");
+			translator.html("English");
 		}
 	);
 	
